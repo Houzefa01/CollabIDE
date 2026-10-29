@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Houzefa Savatra — Développeur web · IA · logiciel</title>
-<meta name="description" content="Portfolio de Houzefa Savatra, développeur spécialisé en web, intelligence artificielle et logiciel. Basé à Madagascar.">
+<meta name="description" content="Portfolio de Houzefa Savatra, développeur full-stack basé à Madagascar : agents IA, applications web, logiciels de bureau. Projets KidzPOS, Chronos, myDoc IA, Distributed IDE et plus.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -160,10 +160,23 @@
   }
   .card:hover{transform:translateY(-6px);border-color:var(--line)}
   .card .thumb{height:150px;position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
-  .card:nth-child(1) .thumb{background:linear-gradient(135deg,#2a1b66,#7C5CFF)}
-  .card:nth-child(2) .thumb{background:linear-gradient(135deg,#0c3d36,#22D3B7)}
-  .card:nth-child(3) .thumb{background:linear-gradient(135deg,#5a3a12,#FFB454)}
+  .card[data-cat="web"] .thumb{background:linear-gradient(135deg,#2a1b66,#7C5CFF)}
+  .card[data-cat="ia"] .thumb{background:linear-gradient(135deg,#0c3d36,#22D3B7)}
+  .card[data-cat="logiciel"] .thumb{background:linear-gradient(135deg,#5a3a12,#FFB454)}
   .card .thumb span{position:absolute;left:20px;bottom:16px;font-family:var(--mono);font-size:.72rem;color:rgba(255,255,255,.85);letter-spacing:.05em}
+  .card .thumb .year{left:auto;right:20px}
+  .card .thumb .badge{left:20px;top:16px;bottom:auto;background:rgba(10,14,26,.45);border:1px solid rgba(255,255,255,.25);padding:3px 8px;border-radius:6px}
+  .card .links{display:flex;gap:16px;margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+  .card .links a{font-family:var(--mono);font-size:.74rem;color:var(--muted);display:inline-flex;align-items:center;gap:6px;transition:color .2s}
+  .card .links a:hover{color:var(--teal)}
+  .card .links svg{width:14px;height:14px}
+  .card.hidden{display:none}
+  .filters{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+  .filter{font-family:var(--mono);font-size:.76rem;color:var(--muted);background:none;border:1px solid var(--line);border-radius:999px;padding:7px 15px;cursor:pointer;transition:border-color .2s,color .2s,background .2s}
+  .filter:hover{color:var(--ink)}
+  .filter.active{color:var(--ink);border-color:var(--violet);background:rgba(124,92,255,.14)}
+  .note a{color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+  .note a:hover{color:var(--teal)}
   .card .body{padding:24px;flex:1;display:flex;flex-direction:column}
   .card h3{font-family:var(--display);font-weight:600;font-size:1.18rem;margin-bottom:8px}
   .card p{color:var(--muted);font-size:.94rem;flex:1}
@@ -273,8 +286,9 @@
         <div class="fact"><span class="k">Nom</span><span class="v">Savatra Houzefa</span></div>
         <div class="fact"><span class="k">Rôle</span><span class="v">Développeur full-stack</span></div>
         <div class="fact"><span class="k">Localisation</span><span class="v">Madagascar</span></div>
-        <div class="fact"><span class="k">Email</span><span class="v"><a href="mailto:hsavatra@gmail.com">hsavatra@gmail.com</a></span></div>
+        <div class="fact"><span class="k">Email</span><span class="v"><a href="mailto:houzefasavatra@gmail.com">houzefasavatra@gmail.com</a></span></div>
         <div class="fact"><span class="k">Téléphone</span><span class="v"><a href="tel:+261322547526">+261 32 25 475 26</a></span></div>
+        <div class="fact"><span class="k">GitHub</span><span class="v"><a href="https://github.com/Houzefa01" target="_blank" rel="noopener">github.com/Houzefa01</a></span></div>
         <div class="fact"><span class="k">Statut</span><span class="v" style="color:var(--teal)">Ouvert aux projets</span></div>
       </div>
     </div>
@@ -320,15 +334,23 @@
   <div class="wrap">
     <p class="mono label reveal"><span class="num">03 /</span> Compétences</p>
     <h2 class="sec-title reveal">La boîte à outils.</h2>
-    <p class="about reveal" style="max-width:560px"><span style="color:var(--muted)">Les technologies et outils avec lesquels je travaille au quotidien. Remplace-les librement par ta propre stack.</span></p>
+    <p class="about reveal" style="max-width:560px"><span style="color:var(--muted)">Les technologies réellement utilisées dans mes projets publiés sur GitHub.</span></p>
     <div class="skills-grid">
-      <div class="skill reveal"><div class="name">HTML / CSS</div><div class="cat">Web</div></div>
-      <div class="skill reveal"><div class="name">JavaScript</div><div class="cat">Web</div></div>
-      <div class="skill reveal"><div class="name">Python</div><div class="cat">IA · Logiciel</div></div>
-      <div class="skill reveal"><div class="name">PHP</div><div class="cat">Web</div></div>
-      <div class="skill reveal"><div class="name">React</div><div class="cat">Front-end</div></div>
-      <div class="skill reveal"><div class="name">Node.js</div><div class="cat">Back-end</div></div>
-      <div class="skill reveal"><div class="name">MySQL</div><div class="cat">Données</div></div>
+      <div class="skill reveal"><div class="name">TypeScript / JavaScript</div><div class="cat">Web</div></div>
+      <div class="skill reveal"><div class="name">React · Next.js · TanStack</div><div class="cat">Front-end</div></div>
+      <div class="skill reveal"><div class="name">Angular</div><div class="cat">Front-end</div></div>
+      <div class="skill reveal"><div class="name">Node.js · Express · Fastify</div><div class="cat">Back-end</div></div>
+      <div class="skill reveal"><div class="name">Java · Spring Boot</div><div class="cat">Back-end</div></div>
+      <div class="skill reveal"><div class="name">JavaFX · Swing</div><div class="cat">Desktop</div></div>
+      <div class="skill reveal"><div class="name">Python · PyTorch</div><div class="cat">IA</div></div>
+      <div class="skill reveal"><div class="name">LLM · Ollama · agents</div><div class="cat">IA</div></div>
+      <div class="skill reveal"><div class="name">PostgreSQL · pgvector</div><div class="cat">Données</div></div>
+      <div class="skill reveal"><div class="name">SQLite · MariaDB · Supabase</div><div class="cat">Données</div></div>
+      <div class="skill reveal"><div class="name">PHP · Moodle</div><div class="cat">Web · LMS</div></div>
+      <div class="skill reveal"><div class="name">n8n · automatisation</div><div class="cat">IA · Outils</div></div>
+      <div class="skill reveal"><div class="name">Docker · systemd · nginx</div><div class="cat">Déploiement</div></div>
+      <div class="skill reveal"><div class="name">Linux · C (noyau)</div><div class="cat">Système</div></div>
+      <div class="skill reveal"><div class="name">R · statistiques</div><div class="cat">Données</div></div>
       <div class="skill reveal"><div class="name">Git &amp; GitHub</div><div class="cat">Outils</div></div>
     </div>
   </div>
@@ -339,33 +361,123 @@
   <div class="wrap">
     <p class="mono label reveal"><span class="num">04 /</span> Projets</p>
     <h2 class="sec-title reveal">Quelques réalisations.</h2>
+    <div class="filters reveal" role="group" aria-label="Filtrer les projets">
+      <button class="filter active" data-f="all">Tous</button>
+      <button class="filter" data-f="web">Web</button>
+      <button class="filter" data-f="ia">IA</button>
+      <button class="filter" data-f="logiciel">Logiciel</button>
+    </div>
     <div class="projects">
-      <article class="card reveal">
-        <div class="thumb"><span>Web</span></div>
+      <article class="card reveal" data-cat="ia">
+        <div class="thumb"><span class="badge">En cours</span><span>IA</span><span class="year">Sept. 2026</span></div>
         <div class="body">
-          <h3>Plateforme web</h3>
-          <p>Application web complète avec interface d'administration, gestion des utilisateurs et tableau de bord. Décris ici ton projet réel.</p>
-          <div class="stack"><span>React</span><span>Node.js</span><span>MySQL</span></div>
+          <h3>Chronos — agent IA autonome</h3>
+          <p>Agent IA qui tourne 24 h/24 avec dashboard et interface vocale : moteur d'objectifs autonome, recherche web approfondie, e-mail, Facebook, Telegram. LLM multi-fournisseurs, secrets chiffrés, validation humaine avant tout envoi.</p>
+          <div class="stack"><span>TypeScript</span><span>Next.js</span><span>PostgreSQL</span><span>LLM</span><span>STT/TTS</span></div>
+          <div class="links"><a href="https://github.com/Houzefa01/chronos-agent-ia" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>Code</a></div>
         </div>
       </article>
-      <article class="card reveal">
-        <div class="thumb"><span>IA</span></div>
+      <article class="card reveal" data-cat="web">
+        <div class="thumb"><span>Web</span><span class="year">Avr. 2026</span></div>
         <div class="body">
-          <h3>Assistant intelligent</h3>
-          <p>Outil basé sur l'IA pour automatiser une tâche répétitive et faire gagner du temps à ses utilisateurs. Remplace par ton projet.</p>
-          <div class="stack"><span>Python</span><span>LLM</span><span>API</span></div>
+          <h3>KidzPOS — caisse offline-first</h3>
+          <p>Logiciel de caisse multi-magasin (devise Ariary) qui continue de vendre sans réseau : cache local, file d'attente rejouée au retour, synchronisation temps réel et fédération magasin-central.</p>
+          <div class="stack"><span>React</span><span>Spring Boot</span><span>PostgreSQL</span><span>PWA</span></div>
+          <div class="links"><a href="https://github.com/Houzefa01/kidzpos-pos-offline" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>Code</a></div>
         </div>
       </article>
-      <article class="card reveal">
-        <div class="thumb"><span>Logiciel</span></div>
+      <article class="card reveal" data-cat="ia">
+        <div class="thumb"><span>IA</span><span class="year">Juil. 2026</span></div>
         <div class="body">
-          <h3>Application métier</h3>
-          <p>Logiciel de bureau conçu pour un besoin précis, avec une base de données locale et une interface simple. À personnaliser.</p>
-          <div class="stack"><span>Python</span><span>SQLite</span><span>Desktop</span></div>
+          <h3>myDoc IA — rédaction assistée</h3>
+          <p>Génère rapports, mémoires, présentations, CV et lettres à partir des besoins de l'utilisateur, avec éditeur, historique des versions et export PDF, DOCX, PPTX, LaTeX et Beamer. Système de crédits.</p>
+          <div class="stack"><span>TanStack Start</span><span>React 19</span><span>Supabase</span><span>IA</span></div>
+          <div class="links"><a href="https://github.com/Houzefa01/mydoc-ai-enhancements" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>Code</a></div>
+        </div>
+      </article>
+      <article class="card reveal" data-cat="logiciel">
+        <div class="thumb"><span class="badge">Mémoire</span><span>Logiciel</span><span class="year">Fév. 2026</span></div>
+        <div class="body">
+          <h3>Distributed IDE</h3>
+          <p>IDE collaboratif de bureau : plusieurs personnes éditent le même code en temps réel grâce à des CRDT, avec terminal dans Docker, LSP, Git intégré et plugins. 8 modules Maven.</p>
+          <div class="stack"><span>Java 21</span><span>JavaFX</span><span>CRDT</span><span>WebSocket</span><span>Docker</span></div>
+          <div class="links"><a href="https://github.com/Houzefa01/distributed-ide" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>Code</a></div>
+        </div>
+      </article>
+      <article class="card reveal" data-cat="ia">
+        <div class="thumb"><span class="badge">Recherche</span><span>IA</span><span class="year">Juil. 2026</span></div>
+        <div class="body">
+          <h3>Lab IA — battre le Transformer sur CPU</h3>
+          <p>14 architectures testées selon un protocole strict. Résultat : une attention locale par blocs, à précision égale, 10,85× plus rapide que le Transformer à 2048 tokens, et la seule à tenir à 4096.</p>
+          <div class="stack"><span>PyTorch</span><span>Python</span><span>Benchmarks</span></div>
+          <div class="links"><a href="https://github.com/Houzefa01/lab-ia-architectures-cpu" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>Code</a></div>
+        </div>
+      </article>
+      <article class="card reveal" data-cat="web">
+        <div class="thumb"><span>Web</span><span class="year">Oct. 2026</span></div>
+        <div class="body">
+          <h3>Duelo — quiz en duel</h3>
+          <p>Jeu de culture générale en duel 1 contre 1, en moins de 3 minutes, dans le navigateur : temps réel, tournois, lots chiffrés, espace admin. Assez léger pour tourner sur un vieux PC.</p>
+          <div class="stack"><span>Node 22</span><span>Fastify</span><span>SQLite</span><span>WebSocket</span></div>
+          <div class="links"><a href="https://github.com/Houzefa01/duelo-quiz-duel" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>Code</a></div>
+        </div>
+      </article>
+      <article class="card reveal" data-cat="web">
+        <div class="thumb"><span class="badge">Équipe</span><span>Web</span><span class="year">Mai 2026</span></div>
+        <div class="body">
+          <h3>ItadyTrano — logements étudiants</h3>
+          <p>Plateforme de location pour les étudiants : annonces avec carte, visites, réservations, contrats, paiement des loyers, messagerie, modération.</p>
+          <div class="stack"><span>Angular</span><span>Spring Boot</span><span>PostgreSQL</span><span>JWT</span></div>
+          <div class="links"><a href="https://github.com/Houzefa01/itadytrano-locamaison" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>Code</a></div>
+        </div>
+      </article>
+      <article class="card reveal" data-cat="web">
+        <div class="thumb"><span>Web</span><span class="year">Mai 2026</span></div>
+        <div class="body">
+          <h3>Lumen — école en ligne</h3>
+          <p>Espace d'apprentissage : tableau de bord de progression, cours, exercices, examens, notes, emploi du temps et espace enseignant.</p>
+          <div class="stack"><span>React 19</span><span>Supabase</span><span>Cloudflare</span></div>
+          <div class="links"><a href="https://github.com/Houzefa01/edu-zenith-scape" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>Code</a></div>
+        </div>
+      </article>
+      <article class="card reveal" data-cat="web">
+        <div class="thumb"><span class="badge">En ligne</span><span>Web</span><span class="year">Fév. 2026</span></div>
+        <div class="body">
+          <h3>LireMalin — apprendre à lire</h3>
+          <p>Application éducative (PWA) pour les 4-8 ans : alphabet, syllabes, lecture, écriture, avec suivi de la progression pour les parents.</p>
+          <div class="stack"><span>React</span><span>PWA</span><span>Vite</span></div>
+          <div class="links"><a href="https://github.com/Houzefa01/mon-premier-livre-fran-ais" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>Code</a><a href="https://houzefa.enset.work" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>Voir le site</a></div>
+        </div>
+      </article>
+      <article class="card reveal" data-cat="logiciel">
+        <div class="thumb"><span>Logiciel</span><span class="year">Juin 2026</span></div>
+        <div class="body">
+          <h3>Panneau d'administration serveur</h3>
+          <p>Administration web d'un serveur Debian : état du système, terminal intégré, fichiers, services systemd, plusieurs utilisateurs avec rôles. HTTPS obligatoire.</p>
+          <div class="stack"><span>Node.js</span><span>Express</span><span>xterm.js</span><span>Linux</span></div>
+          <div class="links"><a href="https://github.com/Houzefa01/panneau-admin-serveur" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>Code</a></div>
+        </div>
+      </article>
+      <article class="card reveal" data-cat="ia">
+        <div class="thumb"><span>IA</span><span class="year">Sept. 2026</span></div>
+        <div class="body">
+          <h3>Prospection automatisée n8n</h3>
+          <p>Prospection freelance : sourcing de contacts, e-mails personnalisés par un LLM, relances et détection des réponses, avec validation humaine obligatoire.</p>
+          <div class="stack"><span>n8n</span><span>Python</span><span>SQLite</span><span>LLM</span></div>
+          <div class="links"><a href="https://github.com/Houzefa01/prospection-n8n-moodle-ia" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>Code</a></div>
+        </div>
+      </article>
+      <article class="card reveal" data-cat="logiciel">
+        <div class="thumb"><span>Logiciel</span><span class="year">Juin 2026</span></div>
+        <div class="body">
+          <h3>Markov Studio</h3>
+          <p>Application de bureau d'analyse de chaînes de Markov : classes, période, loi stationnaire, absorption, prévision et graphes. Moteur creux pour des milliers d'états.</p>
+          <div class="stack"><span>R</span><span>Tcl/Tk</span><span>Mathématiques</span></div>
+          <div class="links"><a href="https://github.com/Houzefa01/markov-studio" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>Code</a></div>
         </div>
       </article>
     </div>
-    <p class="note">↑ Ce sont des exemples — remplace les titres, descriptions et technologies par tes vrais projets.</p>
+    <p class="note">Et aussi : un pilote Wi-Fi Linux pour capter le CSI, un bot statistique de trading, une gestion d'élèves en Java/JDBC… Tout le code est sur <a href="https://github.com/Houzefa01" target="_blank" rel="noopener">github.com/Houzefa01</a>.</p>
   </div>
 </section>
 
@@ -377,7 +489,7 @@
       <h2>Un projet en tête ?<br><em>Parlons-en.</em></h2>
       <p>Que ce soit pour un site, une fonctionnalité IA ou un logiciel sur mesure, je serais ravi d'en discuter. Le plus simple est de m'écrire.</p>
       <div class="contact-actions">
-        <a href="mailto:hsavatra@gmail.com" class="btn btn-primary">
+        <a href="mailto:houzefasavatra@gmail.com" class="btn btn-primary">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
           Envoyer un email
         </a>
@@ -387,8 +499,9 @@
         </a>
       </div>
       <div class="chips">
-        <a href="mailto:hsavatra@gmail.com" class="chip">hsavatra@gmail.com</a>
+        <a href="mailto:houzefasavatra@gmail.com" class="chip">houzefasavatra@gmail.com</a>
         <a href="tel:+261322547526" class="chip">+261 32 25 475 26</a>
+        <a href="https://github.com/Houzefa01" class="chip" target="_blank" rel="noopener">github.com/Houzefa01</a>
       </div>
     </div>
   </div>
@@ -419,6 +532,13 @@
   });
   menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
     menu.classList.remove('open'); burger.setAttribute('aria-expanded', false);
+  }));
+
+  // filtre des projets
+  document.querySelectorAll('.filter').forEach(btn => btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter').forEach(b => b.classList.toggle('active', b === btn));
+    const f = btn.dataset.f;
+    document.querySelectorAll('.projects .card').forEach(c => c.classList.toggle('hidden', f !== 'all' && c.dataset.cat !== f));
   }));
 
   // reveal on scroll
