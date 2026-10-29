@@ -5,6 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Houzefa Savatra — Développeur full-stack · IA · Admin système · Expert Moodle</title>
 <meta name="description" content="Portfolio de Houzefa Savatra, Madagascar : développeur full-stack, expert Moodle, administrateur système Linux et vibecoding. Créateur de Chronos, son propre harnais d'agent IA.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#0A0E1A">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://savatra.enset.work/">
+<meta property="og:title" content="Houzefa Savatra — Full-stack · IA · Admin système · Moodle">
+<meta property="og:description" content="Développeur full-stack, expert IA et vibecoding, administrateur système Linux et expert Moodle, basé à Madagascar.">
+<meta property="og:image" content="https://savatra.enset.work/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://savatra.enset.work/assets/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -84,7 +99,14 @@
     mask-image:radial-gradient(ellipse 70% 60% at 50% 40%,#000 30%,transparent 75%);
     -webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 40%,#000 30%,transparent 75%);
   }
-  .hero-inner{position:relative;z-index:2;width:100%}
+  .hero-inner{position:relative;z-index:2;width:100%;display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:center}
+  .portrait{position:relative;justify-self:end;width:100%;max-width:360px}
+  .portrait::before{content:"";position:absolute;inset:-10px;border-radius:28px;background:linear-gradient(140deg,var(--violet),var(--teal) 60%,var(--amber));opacity:.85;filter:blur(.5px)}
+  .portrait::after{content:"";position:absolute;inset:-40px;border-radius:50%;background:radial-gradient(circle,rgba(124,92,255,.35),transparent 65%);z-index:-1}
+  .portrait{margin:0}
+  .portrait img{position:relative;display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;border-radius:22px;border:4px solid var(--bg)}
+  .portrait .tag{position:absolute;left:-18px;bottom:28px;z-index:2;font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;background:rgba(10,14,26,.85);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:10px;padding:9px 13px;color:var(--ink);display:flex;align-items:center;gap:8px}
+  .portrait .tag .dot{width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 10px var(--teal)}
   .hero .eyebrow{color:var(--teal);margin-bottom:22px;display:flex;align-items:center;gap:12px}
   .hero .eyebrow::before{content:"";width:34px;height:1px;background:var(--teal)}
   .hero h1{
@@ -228,6 +250,11 @@
   /* ---------- RESPONSIVE ---------- */
   @media (max-width:900px){
     .about-grid{grid-template-columns:1fr;gap:40px}
+    .hero-inner{grid-template-columns:1fr;gap:36px}
+    .portrait{order:-1;justify-self:start;max-width:190px;margin-top:28px}
+    .portrait::before{inset:-6px;border-radius:22px}
+    .portrait img{border-radius:18px;border-width:3px}
+    .portrait .tag{display:none}
     .domains{grid-template-columns:1fr}
     .refs{grid-template-columns:1fr}
     .ref li a{flex-direction:column;align-items:flex-start}
@@ -274,19 +301,28 @@
   <div class="aurora" aria-hidden="true"><span class="a1"></span><span class="a2"></span><span class="a3"></span></div>
   <div class="grid-mask" aria-hidden="true"></div>
   <div class="wrap hero-inner">
-    <p class="mono eyebrow">Full-stack · IA · Admin système · Moodle · Madagascar</p>
-    <h1>
-      <span class="first">Houzefa</span>
-      <span class="last">Savatra</span>
-    </h1>
-    <p class="lead">Je conçois et construis des produits numériques de bout en bout — du <strong>web</strong> aux solutions d'<strong>intelligence artificielle</strong>, jusqu'aux <strong>logiciels</strong> sur mesure — et j'administre les <strong>serveurs Linux</strong> et les <strong>plateformes Moodle</strong> qui les font tourner en production.</p>
-    <div class="hero-actions">
-      <a href="#contact" class="btn btn-primary">
-        Travaillons ensemble
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </a>
-      <a href="#projets" class="btn btn-ghost">Voir mes projets</a>
+    <div class="hero-text">
+      <p class="mono eyebrow">Full-stack · IA · Admin système · Moodle · Madagascar</p>
+      <h1>
+        <span class="first">Houzefa</span>
+        <span class="last">Savatra</span>
+      </h1>
+      <p class="lead">Je conçois et construis des produits numériques de bout en bout — du <strong>web</strong> aux solutions d'<strong>intelligence artificielle</strong>, jusqu'aux <strong>logiciels</strong> sur mesure — et j'administre les <strong>serveurs Linux</strong> et les <strong>plateformes Moodle</strong> qui les font tourner en production.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">
+          Travaillons ensemble
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#projets" class="btn btn-ghost">Voir mes projets</a>
+      </div>
     </div>
+    <figure class="portrait">
+      <picture>
+        <source srcset="assets/portrait.webp" type="image/webp">
+        <img src="assets/portrait.jpg" alt="Portrait de Houzefa Savatra" width="600" height="800" fetchpriority="high">
+      </picture>
+      <figcaption class="tag"><span class="dot"></span>Ouvert aux projets</figcaption>
+    </figure>
   </div>
 </section>
 
