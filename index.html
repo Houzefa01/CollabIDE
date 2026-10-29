@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Houzefa Savatra — Développeur web · IA · logiciel</title>
-<meta name="description" content="Portfolio de Houzefa Savatra, développeur full-stack basé à Madagascar : agents IA, applications web, logiciels de bureau. Projets KidzPOS, Chronos, myDoc IA, Distributed IDE et plus.">
+<meta name="description" content="Portfolio de Houzefa Savatra, Madagascar : développeur full-stack, expert Moodle, administrateur système Linux et vibecoding. Créateur de Chronos, son propre harnais d'agent IA.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -139,11 +139,26 @@
   .domain .ico{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;margin-bottom:22px;background:rgba(124,92,255,.12);border:1px solid rgba(124,92,255,.25)}
   .domain:nth-child(2) .ico{background:rgba(34,211,183,.12);border-color:rgba(34,211,183,.28)}
   .domain:nth-child(3) .ico{background:rgba(255,180,84,.12);border-color:rgba(255,180,84,.3)}
+  .domain:nth-child(5) .ico{background:rgba(34,211,183,.12);border-color:rgba(34,211,183,.28)}
+  .domain:nth-child(6) .ico{background:rgba(255,180,84,.12);border-color:rgba(255,180,84,.3)}
   .domain .ico svg{width:24px;height:24px}
   .domain h3{font-family:var(--display);font-weight:600;font-size:1.3rem;margin-bottom:10px}
   .domain p{color:var(--muted);font-size:.96rem;position:relative;z-index:1}
   .domain .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px;position:relative;z-index:1}
   .domain .tags span{font-family:var(--mono);font-size:.7rem;color:var(--muted);border:1px solid var(--line);padding:4px 9px;border-radius:6px}
+
+  /* ---------- REFERENCES ---------- */
+  .refs{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:48px}
+  .ref{border:1px solid var(--line);border-radius:18px;padding:28px;background:linear-gradient(180deg,var(--surface),var(--bg-2))}
+  .ref .mono{color:var(--teal);margin-bottom:12px}
+  .ref h3{font-family:var(--display);font-weight:600;font-size:1.2rem;margin-bottom:10px}
+  .ref p{color:var(--muted);font-size:.95rem}
+  .ref ul{list-style:none;margin-top:18px;display:flex;flex-direction:column;gap:8px}
+  .ref li a{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:11px 14px;border:1px solid var(--line);border-radius:10px;font-size:.92rem;transition:border-color .2s,background .2s}
+  .ref li a:hover{border-color:var(--teal);background:rgba(34,211,183,.06)}
+  .ref li a .u{font-family:var(--mono);font-size:.72rem;color:var(--faint);text-align:right}
+  .ref .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}
+  .ref .tags span{font-family:var(--mono);font-size:.7rem;color:var(--muted);border:1px solid var(--line);padding:4px 9px;border-radius:6px}
 
   /* ---------- SKILLS ---------- */
   .skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:44px}
@@ -214,6 +229,9 @@
   @media (max-width:900px){
     .about-grid{grid-template-columns:1fr;gap:40px}
     .domains{grid-template-columns:1fr}
+    .refs{grid-template-columns:1fr}
+    .ref li a{flex-direction:column;align-items:flex-start}
+    .ref li a .u{text-align:left}
     .skills-grid{grid-template-columns:repeat(2,1fr)}
     .projects{grid-template-columns:1fr}
     section{padding:90px 0}
@@ -240,6 +258,7 @@
     <nav class="nav-links" id="menu">
       <a href="#apropos">À propos</a>
       <a href="#expertise">Expertise</a>
+      <a href="#references">Références</a>
       <a href="#competences">Compétences</a>
       <a href="#projets">Projets</a>
       <a href="#contact" class="nav-cta">Me contacter</a>
@@ -260,7 +279,7 @@
       <span class="first">Houzefa</span>
       <span class="last">Savatra</span>
     </h1>
-    <p class="lead">Je conçois et construis des produits numériques de bout en bout — du <strong>web</strong> aux solutions d'<strong>intelligence artificielle</strong>, jusqu'aux <strong>logiciels</strong> sur mesure. Du code propre, des interfaces claires, des outils qui servent vraiment leurs utilisateurs.</p>
+    <p class="lead">Je conçois et construis des produits numériques de bout en bout — du <strong>web</strong> aux solutions d'<strong>intelligence artificielle</strong>, jusqu'aux <strong>logiciels</strong> sur mesure — et j'administre les <strong>serveurs Linux</strong> et les <strong>plateformes Moodle</strong> qui les font tourner en production.</p>
     <div class="hero-actions">
       <a href="#contact" class="btn btn-primary">
         Travaillons ensemble
@@ -279,12 +298,14 @@
         <p class="mono label"><span class="num">01 /</span> À propos</p>
         <h2 class="sec-title">Construire des choses utiles, proprement.</h2>
         <p>Je suis développeur, passionné par la création de produits qui marchent et qui durent. J'aime autant l'architecture d'une application que les détails d'une interface : les deux décident de l'expérience finale.</p>
-        <p>Mon terrain de jeu couvre trois domaines complémentaires — <strong>le web</strong>, <strong>l'intelligence artificielle</strong> et <strong>le logiciel</strong> — ce qui me permet d'accompagner un projet de l'idée jusqu'à la mise en production, sans dépendre d'une seule brique.</p>
+        <p>Mon terrain de jeu couvre <strong>le web</strong>, <strong>l'intelligence artificielle</strong> et <strong>le logiciel</strong>, jusqu'à l'infrastructure qui les héberge. Je peux ainsi accompagner un projet de l'idée jusqu'à la mise en production, puis le maintenir, sans dépendre d'une seule brique.</p>
+        <p>Je suis aussi <strong>administrateur système Linux</strong> et <strong>expert Moodle</strong> : je gère les plateformes d'apprentissage de la Music Crossroads Academy (Mozambique, Malawi, Zimbabwe) et du Global Music Campus, ainsi que la maintenance de leurs serveurs chez Hetzner et xCloud. Pour mon école, j'ai développé et j'administre le serveur <strong>serveur.enset.work</strong> et le Moodle <strong>moodle.enset.work</strong>, qui héberge 28 tenants.</p>
+        <p>En ce moment, je développe <strong>Chronos</strong>, mon propre harnais d'agent IA. Je pratique le <strong>vibecoding</strong> au quotidien : je conçois et livre des logiciels en pilotant des agents de code IA.</p>
         <p>Curieux et rigoureux, j'apprends en continu et je m'attache à livrer un travail soigné, documenté et maintenable.</p>
       </div>
       <div class="facts reveal" aria-label="Coordonnées">
         <div class="fact"><span class="k">Nom</span><span class="v">Savatra Houzefa</span></div>
-        <div class="fact"><span class="k">Rôle</span><span class="v">Développeur full-stack</span></div>
+        <div class="fact"><span class="k">Rôle</span><span class="v">Full-stack · Admin système · Moodle</span></div>
         <div class="fact"><span class="k">Localisation</span><span class="v">Madagascar</span></div>
         <div class="fact"><span class="k">Email</span><span class="v"><a href="mailto:houzefasavatra@gmail.com">houzefasavatra@gmail.com</a></span></div>
         <div class="fact"><span class="k">Téléphone</span><span class="v"><a href="tel:+261322547526">+261 32 25 475 26</a></span></div>
@@ -299,7 +320,7 @@
 <section id="expertise">
   <div class="wrap">
     <p class="mono label reveal"><span class="num">02 /</span> Expertise</p>
-    <h2 class="sec-title reveal">Trois domaines, une seule démarche.</h2>
+    <h2 class="sec-title reveal">Six domaines, une seule démarche.</h2>
     <div class="domains">
       <article class="domain reveal">
         <div class="ico">
@@ -325,6 +346,62 @@
         <p>Des applications de bureau et des outils métier robustes, pensés pour résoudre un problème précis et s'intégrer dans un flux de travail existant.</p>
         <div class="tags"><span>Desktop</span><span>Outils métier</span><span>Architecture</span><span>Bases de données</span></div>
       </article>
+      <article class="domain reveal">
+        <div class="ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#9a7bff" stroke-width="1.8"><path d="M4 17l6-6-6-6M12 19h8"/></svg>
+        </div>
+        <h3>Vibecoding</h3>
+        <p>Concevoir et livrer des logiciels complets en pilotant des agents de code IA, avec des tests, des audits et une revue humaine pour garder le code fiable et maintenable.</p>
+        <div class="tags"><span>Agents de code</span><span>Claude Code</span><span>Prompting</span><span>Revue</span></div>
+      </article>
+      <article class="domain reveal">
+        <div class="ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#22D3B7" stroke-width="1.8"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7h.01M7 17h.01"/></svg>
+        </div>
+        <h3>Administration système</h3>
+        <p>Serveurs Linux en production : installation, sécurisation, sauvegardes, supervision, mises à jour et dépannage, chez Hetzner, xCloud ou sur du matériel sur site.</p>
+        <div class="tags"><span>Linux</span><span>Debian · Arch</span><span>Hetzner</span><span>xCloud</span><span>nginx</span></div>
+      </article>
+      <article class="domain reveal">
+        <div class="ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#FFB454" stroke-width="1.8"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5M22 9v6"/></svg>
+        </div>
+        <h3>Expert Moodle</h3>
+        <p>Déploiement, configuration, multi-tenant, thèmes, plugins, mises à jour et maintenance de plateformes Moodle utilisées par des écoles et des académies.</p>
+        <div class="tags"><span>Moodle</span><span>Multi-tenant</span><span>PHP</span><span>LMS</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- REFERENCES -->
+<section id="references">
+  <div class="wrap">
+    <p class="mono label reveal"><span class="num">03 /</span> Références</p>
+    <h2 class="sec-title reveal">Des plateformes en production.</h2>
+    <div class="refs">
+      <article class="ref reveal">
+        <p class="mono">Moodle · administration serveur</p>
+        <h3>Music Crossroads Academy &amp; Global Music Campus</h3>
+        <p>Gestion des plateformes Moodle de l'académie et maintenance de leurs serveurs Linux, hébergés chez Hetzner et xCloud.</p>
+        <ul>
+          <li><a href="https://mozambique.music-crossroads-academy.net/" target="_blank" rel="noopener"><span>Music Crossroads Mozambique</span><span class="u">mozambique.music-crossroads-academy.net</span></a></li>
+          <li><a href="https://malawi.music-crossroads-academy.net/" target="_blank" rel="noopener"><span>Music Crossroads Malawi</span><span class="u">malawi.music-crossroads-academy.net</span></a></li>
+          <li><a href="https://zimbabwe.music-crossroads-academy.net/" target="_blank" rel="noopener"><span>Music Crossroads Zimbabwe</span><span class="u">zimbabwe.music-crossroads-academy.net</span></a></li>
+          <li><a href="https://learn.global-music-campus.net/" target="_blank" rel="noopener"><span>Global Music Campus</span><span class="u">learn.global-music-campus.net</span></a></li>
+        </ul>
+        <div class="tags"><span>Moodle</span><span>Linux</span><span>Hetzner</span><span>xCloud</span></div>
+      </article>
+      <article class="ref reveal">
+        <p class="mono">Développement · administration</p>
+        <h3>Infrastructure de l'ENSET</h3>
+        <p>Développement et administration du serveur de l'école, et du Moodle multi-tenant de l'établissement, qui héberge 28 tenants.</p>
+        <ul>
+          <li><a href="https://serveur.enset.work/" target="_blank" rel="noopener"><span>Serveur de l'école</span><span class="u">serveur.enset.work</span></a></li>
+          <li><a href="https://moodle.enset.work/" target="_blank" rel="noopener"><span>Moodle de l'école (28 tenants)</span><span class="u">moodle.enset.work</span></a></li>
+        </ul>
+        <div class="tags"><span>Moodle multi-tenant</span><span>Node.js</span><span>Linux</span><span>Cloudflare</span></div>
+      </article>
     </div>
   </div>
 </section>
@@ -332,9 +409,9 @@
 <!-- SKILLS -->
 <section id="competences">
   <div class="wrap">
-    <p class="mono label reveal"><span class="num">03 /</span> Compétences</p>
+    <p class="mono label reveal"><span class="num">04 /</span> Compétences</p>
     <h2 class="sec-title reveal">La boîte à outils.</h2>
-    <p class="about reveal" style="max-width:560px"><span style="color:var(--muted)">Les technologies réellement utilisées dans mes projets publiés sur GitHub.</span></p>
+    <p class="about reveal" style="max-width:560px"><span style="color:var(--muted)">Les technologies utilisées dans mes projets et sur les serveurs que j'administre.</span></p>
     <div class="skills-grid">
       <div class="skill reveal"><div class="name">TypeScript / JavaScript</div><div class="cat">Web</div></div>
       <div class="skill reveal"><div class="name">React · Next.js · TanStack</div><div class="cat">Front-end</div></div>
@@ -346,11 +423,15 @@
       <div class="skill reveal"><div class="name">LLM · Ollama · agents</div><div class="cat">IA</div></div>
       <div class="skill reveal"><div class="name">PostgreSQL · pgvector</div><div class="cat">Données</div></div>
       <div class="skill reveal"><div class="name">SQLite · MariaDB · Supabase</div><div class="cat">Données</div></div>
-      <div class="skill reveal"><div class="name">PHP · Moodle</div><div class="cat">Web · LMS</div></div>
+      <div class="skill reveal"><div class="name">Moodle · multi-tenant</div><div class="cat">LMS</div></div>
+      <div class="skill reveal"><div class="name">PHP</div><div class="cat">Web</div></div>
       <div class="skill reveal"><div class="name">n8n · automatisation</div><div class="cat">IA · Outils</div></div>
+      <div class="skill reveal"><div class="name">Administration Linux</div><div class="cat">Système</div></div>
+      <div class="skill reveal"><div class="name">Hetzner · xCloud · Cloudflare</div><div class="cat">Hébergement</div></div>
       <div class="skill reveal"><div class="name">Docker · systemd · nginx</div><div class="cat">Déploiement</div></div>
       <div class="skill reveal"><div class="name">Linux · C (noyau)</div><div class="cat">Système</div></div>
       <div class="skill reveal"><div class="name">R · statistiques</div><div class="cat">Données</div></div>
+      <div class="skill reveal"><div class="name">Vibecoding · agents de code</div><div class="cat">IA · Outils</div></div>
       <div class="skill reveal"><div class="name">Git &amp; GitHub</div><div class="cat">Outils</div></div>
     </div>
   </div>
@@ -359,7 +440,7 @@
 <!-- PROJECTS -->
 <section id="projets">
   <div class="wrap">
-    <p class="mono label reveal"><span class="num">04 /</span> Projets</p>
+    <p class="mono label reveal"><span class="num">05 /</span> Projets</p>
     <h2 class="sec-title reveal">Quelques réalisations.</h2>
     <div class="filters reveal" role="group" aria-label="Filtrer les projets">
       <button class="filter active" data-f="all">Tous</button>
@@ -371,8 +452,8 @@
       <article class="card reveal" data-cat="ia">
         <div class="thumb"><span class="badge">En cours</span><span>IA</span><span class="year">Sept. 2026</span></div>
         <div class="body">
-          <h3>Chronos — agent IA autonome</h3>
-          <p>Agent IA qui tourne 24 h/24 avec dashboard et interface vocale : moteur d'objectifs autonome, recherche web approfondie, e-mail, Facebook, Telegram. LLM multi-fournisseurs, secrets chiffrés, validation humaine avant tout envoi.</p>
+          <h3>Chronos — mon harnais d'agent IA</h3>
+          <p>Mon propre harnais d'agent IA, en développement : il tourne 24 h/24 avec dashboard et interface vocale : moteur d'objectifs autonome, recherche web approfondie, e-mail, Facebook, Telegram. LLM multi-fournisseurs, secrets chiffrés, validation humaine avant tout envoi.</p>
           <div class="stack"><span>TypeScript</span><span>Next.js</span><span>PostgreSQL</span><span>LLM</span><span>STT/TTS</span></div>
           <div class="links"><a href="https://github.com/Houzefa01/chronos-agent-ia" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>Code</a></div>
         </div>
@@ -485,7 +566,7 @@
 <section id="contact" class="contact">
   <div class="wrap">
     <div class="contact-wrap reveal">
-      <p class="mono label" style="justify-content:center"><span class="num">05 /</span> Contact</p>
+      <p class="mono label" style="justify-content:center"><span class="num">06 /</span> Contact</p>
       <h2>Un projet en tête ?<br><em>Parlons-en.</em></h2>
       <p>Que ce soit pour un site, une fonctionnalité IA ou un logiciel sur mesure, je serais ravi d'en discuter. Le plus simple est de m'écrire.</p>
       <div class="contact-actions">
@@ -510,7 +591,7 @@
 <footer>
   <div class="wrap foot">
     <p>© <span id="year"></span> Houzefa Savatra — Tous droits réservés.</p>
-    <p class="mono">Développeur · Web · IA · Logiciel</p>
+    <p class="mono">Développeur · Web · IA · Logiciel · Linux · Moodle</p>
   </div>
 </footer>
 
