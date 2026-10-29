@@ -242,6 +242,10 @@
   .foot{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
   .foot p{color:var(--faint);font-size:.85rem}
   .foot .mono{color:var(--faint)}
+  .visits{display:none;align-items:center;gap:8px;font-family:var(--mono);font-size:.78rem;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:6px 13px}
+  .visits.on{display:inline-flex}
+  .visits svg{width:15px;height:15px;color:var(--teal)}
+  .visits b{color:var(--ink);font-weight:500}
 
   /* ---------- REVEAL ---------- */
   .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
@@ -627,11 +631,29 @@
 <footer>
   <div class="wrap foot">
     <p>© <span id="year"></span> Houzefa Savatra — Tous droits réservés.</p>
+    <p class="visits" id="visits" title="Nombre total de visites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><b id="visits-n">0</b> visites</p>
     <p class="mono">Full-stack · IA · Vibecoding · Admin système · Moodle</p>
   </div>
 </footer>
 
 <script>
+  // statistiques de visites (GoatCounter : sans cookie)
+  const GC = 'savatra';
+  (function(){
+    const t = document.createElement('script');
+    t.async = true; t.src = 'https://gc.zgo.at/count.js';
+    t.dataset.goatcounter = 'https://' + GC + '.goatcounter.com/count';
+    document.head.appendChild(t);
+  })();
+  // compteur public : n'apparaît que si GoatCounter répond
+  fetch('https://' + GC + '.goatcounter.com/counter/TOTAL.json')
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(d => {
+      document.getElementById('visits-n').textContent = String(d.count).replace(/,/g, '\u202f');
+      document.getElementById('visits').classList.add('on');
+    })
+    .catch(() => {});
+
   // année dynamique
   document.getElementById('year').textContent = new Date().getFullYear();
 
