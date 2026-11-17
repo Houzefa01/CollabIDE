@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Houzefa Savatra — Développeur full-stack · IA · Admin système · Expert Moodle</title>
-<meta name="description" content="Portfolio de Houzefa Savatra, Madagascar : développeur full-stack, expert Moodle, administrateur système Linux et vibecoding. Créateur de Chronos, son propre harnais d'agent IA.">
+<title>Houzefa Savatra — Full-stack Developer · AI · SysAdmin · Moodle Expert</title>
+<meta name="description" content="Portfolio of Houzefa Savatra, Madagascar: full-stack developer, Moodle expert, Linux system administrator and vibecoder. Creator of Chronos, a custom AI agent harness.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
 <link rel="icon" href="favicon.ico" sizes="any">
@@ -12,12 +12,16 @@
 <meta name="theme-color" content="#0A0E1A">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://savatra.enset.work/">
-<meta property="og:title" content="Houzefa Savatra — Full-stack · IA · Admin système · Moodle">
-<meta property="og:description" content="Développeur full-stack, expert IA et vibecoding, administrateur système Linux et expert Moodle, basé à Madagascar.">
+<meta property="og:title" content="Houzefa Savatra — Full-stack · AI · SysAdmin · Moodle">
+<meta property="og:description" content="Full-stack developer, AI and vibecoding expert, Linux system administrator and Moodle expert, based in Madagascar.">
 <meta property="og:image" content="https://savatra.enset.work/assets/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:locale" content="fr_FR">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="fr_FR">
+<link rel="alternate" hreflang="en" href="https://savatra.enset.work/">
+<link rel="alternate" hreflang="fr" href="https://savatra.enset.work/?lang=fr">
+<link rel="alternate" hreflang="x-default" href="https://savatra.enset.work/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://savatra.enset.work/assets/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -79,6 +83,11 @@
     border-radius:8px;color:var(--ink);transition:border-color .2s,background .2s
   }
   .nav-cta:hover{border-color:var(--violet);background:rgba(124,92,255,.12)}
+  .nav-end{display:flex;align-items:center;gap:26px}
+  .lang{display:flex;gap:2px;padding:3px;border:1px solid var(--line);border-radius:8px}
+  .lang button{font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;background:none;border:0;color:var(--muted);padding:5px 9px;border-radius:6px;cursor:pointer;transition:color .2s,background .2s}
+  .lang button:hover{color:var(--ink)}
+  .lang button[aria-pressed="true"]{color:var(--ink);background:rgba(124,92,255,.22)}
   .burger{display:none;background:none;border:0;color:var(--ink);cursor:pointer;padding:6px}
 
   /* ---------- HERO ---------- */
@@ -287,17 +296,20 @@
 <header id="top">
   <div class="wrap nav">
     <a href="#top" class="brand"><span class="dot"></span>Houzefa Savatra</a>
+    <div class="nav-end">
     <nav class="nav-links" id="menu">
-      <a href="#apropos">À propos</a>
+      <a href="#apropos" data-i18n="nav.about">About</a>
       <a href="#expertise">Expertise</a>
-      <a href="#references">Références</a>
-      <a href="#competences">Compétences</a>
-      <a href="#projets">Projets</a>
-      <a href="#contact" class="nav-cta">Me contacter</a>
+      <a href="#references" data-i18n="nav.refs">References</a>
+      <a href="#competences" data-i18n="nav.skills">Skills</a>
+      <a href="#projets" data-i18n="nav.projects">Projects</a>
+      <a href="#contact" class="nav-cta" data-i18n="nav.contact">Contact me</a>
     </nav>
-    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+    <div class="lang" role="group" aria-label="Language / Langue"><button type="button" data-lang="en" aria-pressed="true" title="English">EN</button><button type="button" data-lang="fr" aria-pressed="false" title="Français">FR</button></div>
+    <button class="burger" id="burger" aria-label="Open menu" data-i18n-attr="aria-label:menu.open" aria-expanded="false">
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
     </button>
+    </div>
   </div>
 </header>
 
@@ -307,26 +319,26 @@
   <div class="grid-mask" aria-hidden="true"></div>
   <div class="wrap hero-inner">
     <div class="hero-text">
-      <p class="mono eyebrow">Full-stack · IA · Admin système · Moodle · Madagascar</p>
+      <p class="mono eyebrow" data-i18n="hero.eyebrow">Full-stack · AI · SysAdmin · Moodle · Madagascar</p>
       <h1>
         <span class="first">Houzefa</span>
         <span class="last">Savatra</span>
       </h1>
-      <p class="lead">Je conçois et construis des produits numériques de bout en bout — du <strong>web</strong> aux solutions d'<strong>intelligence artificielle</strong>, jusqu'aux <strong>logiciels</strong> sur mesure — et j'administre les <strong>serveurs Linux</strong> et les <strong>plateformes Moodle</strong> qui les font tourner en production.</p>
+      <p class="lead" data-i18n="hero.lead">I design and build digital products end to end — from the <strong>web</strong> to <strong>artificial intelligence</strong> solutions and custom <strong>software</strong> — and I run the <strong>Linux servers</strong> and <strong>Moodle platforms</strong> that keep them in production.</p>
       <div class="hero-actions">
         <a href="#contact" class="btn btn-primary">
-          Travaillons ensemble
+          <span data-i18n="hero.cta">Let's work together</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
-        <a href="#projets" class="btn btn-ghost">Voir mes projets</a>
+        <a href="#projets" class="btn btn-ghost" data-i18n="hero.projects">See my projects</a>
       </div>
     </div>
     <figure class="portrait">
       <picture>
         <source srcset="assets/portrait.webp" type="image/webp">
-        <img src="assets/portrait.jpg" alt="Portrait de Houzefa Savatra" width="600" height="800" fetchpriority="high">
+        <img src="assets/portrait.jpg" alt="Portrait of Houzefa Savatra" data-i18n-attr="alt:hero.alt" width="600" height="800" fetchpriority="high">
       </picture>
-      <figcaption class="tag"><span class="dot"></span>Ouvert aux projets</figcaption>
+      <figcaption class="tag" data-i18n="hero.tag"><span class="dot"></span>Open to projects</figcaption>
     </figure>
   </div>
 </section>
@@ -336,22 +348,22 @@
   <div class="wrap">
     <div class="about-grid">
       <div class="about reveal">
-        <p class="mono label"><span class="num">01 /</span> À propos</p>
-        <h2 class="sec-title">Construire des choses utiles, proprement.</h2>
-        <p>Je suis développeur, passionné par la création de produits qui marchent et qui durent. J'aime autant l'architecture d'une application que les détails d'une interface : les deux décident de l'expérience finale.</p>
-        <p>Mon terrain de jeu couvre <strong>le web</strong>, <strong>l'intelligence artificielle</strong> et <strong>le logiciel</strong>, jusqu'à l'infrastructure qui les héberge. Je peux ainsi accompagner un projet de l'idée jusqu'à la mise en production, puis le maintenir, sans dépendre d'une seule brique.</p>
-        <p>Je suis aussi <strong>administrateur système Linux</strong> et <strong>expert Moodle</strong> : je gère les plateformes d'apprentissage de la Music Crossroads Academy (Mozambique, Malawi, Zimbabwe) et du Global Music Campus, ainsi que la maintenance de leurs serveurs chez Hetzner et xCloud. Pour mon école, j'ai développé et j'administre le serveur <strong>serveur.enset.work</strong> et le Moodle <strong>moodle.enset.work</strong>, qui héberge 28 tenants.</p>
-        <p>En ce moment, je développe <strong>Chronos</strong>, mon propre harnais d'agent IA. Je pratique le <strong>vibecoding</strong> au quotidien : je conçois et livre des logiciels en pilotant des agents de code IA.</p>
-        <p>Curieux et rigoureux, j'apprends en continu et je m'attache à livrer un travail soigné, documenté et maintenable.</p>
+        <p class="mono label" data-i18n="about.label"><span class="num">01 /</span> About</p>
+        <h2 class="sec-title" data-i18n="about.title">Building useful things, cleanly.</h2>
+        <p data-i18n="about.p1">I'm a developer who loves building products that work and last. I care as much about an application's architecture as about the details of its interface: both shape the final experience.</p>
+        <p data-i18n="about.p2">My playground covers <strong>the web</strong>, <strong>artificial intelligence</strong> and <strong>software</strong>, down to the infrastructure that hosts them. That lets me take a project from idea to production, then maintain it, without depending on a single building block.</p>
+        <p data-i18n="about.p3">I'm also a <strong>Linux system administrator</strong> and a <strong>Moodle expert</strong>: I manage the learning platforms of the Music Crossroads Academy (Mozambique, Malawi, Zimbabwe) and the Global Music Campus, and maintain their servers on Hetzner and xCloud. For my school, I built and run the server <strong>serveur.enset.work</strong> and the Moodle site <strong>moodle.enset.work</strong>, which hosts 28 tenants.</p>
+        <p data-i18n="about.p4">I'm currently building <strong>Chronos</strong>, my own AI agent harness. I practise <strong>vibecoding</strong> every day: I design and ship software by steering AI coding agents.</p>
+        <p data-i18n="about.p5">Curious and rigorous, I keep learning and focus on delivering work that is polished, documented and maintainable.</p>
       </div>
-      <div class="facts reveal" aria-label="Coordonnées">
-        <div class="fact"><span class="k">Nom</span><span class="v">Savatra Houzefa</span></div>
-        <div class="fact"><span class="k">Rôle</span><span class="v">Développeur full-stack · Expert IA &amp; vibecoding · Administrateur système Linux · Expert Moodle</span></div>
-        <div class="fact"><span class="k">Localisation</span><span class="v">Madagascar</span></div>
+      <div class="facts reveal" aria-label="Contact details" data-i18n-attr="aria-label:facts.aria">
+        <div class="fact"><span class="k" data-i18n="fact.name">Name</span><span class="v">Savatra Houzefa</span></div>
+        <div class="fact"><span class="k" data-i18n="fact.role">Role</span><span class="v" data-i18n="fact.rolev">Full-stack developer · AI &amp; vibecoding expert · Linux system administrator · Moodle expert</span></div>
+        <div class="fact"><span class="k" data-i18n="fact.loc">Location</span><span class="v">Madagascar</span></div>
         <div class="fact"><span class="k">Email</span><span class="v"><a href="mailto:houzefasavatra@gmail.com">houzefasavatra@gmail.com</a></span></div>
-        <div class="fact"><span class="k">Téléphone</span><span class="v"><a href="tel:+261322547526">+261 32 25 475 26</a></span></div>
+        <div class="fact"><span class="k" data-i18n="fact.phone">Phone</span><span class="v"><a href="tel:+261322547526">+261 32 25 475 26</a></span></div>
         <div class="fact"><span class="k">GitHub</span><span class="v"><a href="https://github.com/Houzefa01" target="_blank" rel="noopener">github.com/Houzefa01</a></span></div>
-        <div class="fact"><span class="k">Statut</span><span class="v" style="color:var(--teal)">Ouvert aux projets</span></div>
+        <div class="fact"><span class="k" data-i18n="fact.status">Status</span><span class="v" style="color:var(--teal)" data-i18n="fact.statusv">Open to projects</span></div>
       </div>
     </div>
   </div>
@@ -361,54 +373,54 @@
 <section id="expertise">
   <div class="wrap">
     <p class="mono label reveal"><span class="num">02 /</span> Expertise</p>
-    <h2 class="sec-title reveal">Six domaines, une seule démarche.</h2>
+    <h2 class="sec-title reveal" data-i18n="exp.title">Six fields, one approach.</h2>
     <div class="domains">
       <article class="domain reveal">
         <div class="ico">
           <svg viewBox="0 0 24 24" fill="none" stroke="#9a7bff" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20M6 6.5h.01M9 6.5h.01"/></svg>
         </div>
-        <h3>Développement web</h3>
-        <p>Applications web complètes, du front au back-end : caisse offline-first multi-magasin, quiz en temps réel, plateforme de location, école en ligne, applications éducatives en PWA.</p>
-        <div class="tags"><span>React · Angular</span><span>Spring Boot</span><span>Node.js</span><span>PWA</span><span>Temps réel</span></div>
+        <h3 data-i18n="exp.web">Web development</h3>
+        <p data-i18n="exp.web.p">Complete web applications, from front end to back end: an offline-first multi-store point of sale, real-time quizzes, a rental platform, an online school, educational PWAs.</p>
+        <div class="tags"><span>React · Angular</span><span>Spring Boot</span><span>Node.js</span><span>PWA</span><span data-i18n="tag.realtime">Real-time</span></div>
       </article>
       <article class="domain reveal">
         <div class="ico">
           <svg viewBox="0 0 24 24" fill="none" stroke="#22D3B7" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg>
         </div>
-        <h3>Intelligence artificielle</h3>
-        <p>Agents IA autonomes (Chronos, mon propre harnais), génération de documents par IA, automatisation avec n8n, et recherche sur des architectures de réseaux de neurones plus rapides que le Transformer sur CPU.</p>
-        <div class="tags"><span>Agents IA</span><span>LLM</span><span>PyTorch</span><span>n8n</span><span>Ollama</span></div>
+        <h3 data-i18n="exp.ai">Artificial intelligence</h3>
+        <p data-i18n="exp.ai.p">Autonomous AI agents (Chronos, my own harness), AI document generation, automation with n8n, and research into neural network architectures faster than the Transformer on CPU.</p>
+        <div class="tags"><span data-i18n="tag.aiagents">AI agents</span><span>LLM</span><span>PyTorch</span><span>n8n</span><span>Ollama</span></div>
       </article>
       <article class="domain reveal">
         <div class="ico">
           <svg viewBox="0 0 24 24" fill="none" stroke="#FFB454" stroke-width="1.8"><path d="M8 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-2"/><path d="M9 7l-2 2 2 2M15 7l2 2-2 2M13 6l-2 6"/></svg>
         </div>
-        <h3>Logiciel</h3>
-        <p>Applications de bureau et outils métier : IDE collaboratif temps réel, analyse de chaînes de Markov, gestion d'élèves, jusqu'au pilote Wi-Fi du noyau Linux.</p>
-        <div class="tags"><span>Java · JavaFX</span><span>CRDT</span><span>R</span><span>C · noyau Linux</span><span>JDBC</span></div>
+        <h3 data-i18n="cat.software">Software</h3>
+        <p data-i18n="exp.sw.p">Desktop applications and business tools: a real-time collaborative IDE, Markov chain analysis, student management, all the way down to a Linux kernel Wi-Fi driver.</p>
+        <div class="tags"><span>Java · JavaFX</span><span>CRDT</span><span>R</span><span data-i18n="tag.kernel">C · Linux kernel</span><span>JDBC</span></div>
       </article>
       <article class="domain reveal">
         <div class="ico">
           <svg viewBox="0 0 24 24" fill="none" stroke="#9a7bff" stroke-width="1.8"><path d="M4 17l6-6-6-6M12 19h8"/></svg>
         </div>
         <h3>Vibecoding</h3>
-        <p>Concevoir et livrer des logiciels complets en pilotant des agents de code IA, avec des tests, des audits et une revue humaine pour garder le code fiable et maintenable.</p>
-        <div class="tags"><span>Agents de code</span><span>Claude Code</span><span>Prompting</span><span>Revue</span></div>
+        <p data-i18n="exp.vibe.p">Designing and shipping complete software by steering AI coding agents, with tests, audits and human review to keep the code reliable and maintainable.</p>
+        <div class="tags"><span data-i18n="tag.codeagents">Coding agents</span><span>Claude Code</span><span>Prompting</span><span data-i18n="tag.review">Review</span></div>
       </article>
       <article class="domain reveal">
         <div class="ico">
           <svg viewBox="0 0 24 24" fill="none" stroke="#22D3B7" stroke-width="1.8"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7h.01M7 17h.01"/></svg>
         </div>
-        <h3>Administration système</h3>
-        <p>Serveurs Linux en production : installation, sécurisation, sauvegardes, supervision, mises à jour et dépannage, chez Hetzner, xCloud ou sur du matériel sur site.</p>
+        <h3 data-i18n="exp.sys">System administration</h3>
+        <p data-i18n="exp.sys.p">Production Linux servers: installation, hardening, backups, monitoring, updates and troubleshooting, on Hetzner, xCloud or on-site hardware.</p>
         <div class="tags"><span>Linux</span><span>Debian · Arch</span><span>Hetzner</span><span>xCloud</span><span>nginx</span></div>
       </article>
       <article class="domain reveal">
         <div class="ico">
           <svg viewBox="0 0 24 24" fill="none" stroke="#FFB454" stroke-width="1.8"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5M22 9v6"/></svg>
         </div>
-        <h3>Expert Moodle</h3>
-        <p>Déploiement, configuration, multi-tenant, thèmes, plugins, mises à jour et maintenance de plateformes Moodle utilisées par des écoles et des académies.</p>
+        <h3 data-i18n="exp.moodle">Moodle expert</h3>
+        <p data-i18n="exp.moodle.p">Deployment, configuration, multi-tenancy, themes, plugins, upgrades and maintenance of Moodle platforms used by schools and academies.</p>
         <div class="tags"><span>Moodle</span><span>Multi-tenant</span><span>PHP</span><span>LMS</span></div>
       </article>
     </div>
@@ -418,13 +430,13 @@
 <!-- REFERENCES -->
 <section id="references">
   <div class="wrap">
-    <p class="mono label reveal"><span class="num">03 /</span> Références</p>
-    <h2 class="sec-title reveal">Des plateformes en production.</h2>
+    <p class="mono label reveal" data-i18n="refs.label"><span class="num">03 /</span> References</p>
+    <h2 class="sec-title reveal" data-i18n="refs.title">Platforms in production.</h2>
     <div class="refs">
       <article class="ref reveal">
-        <p class="mono">Moodle · administration serveur</p>
+        <p class="mono" data-i18n="ref1.kind">Moodle · server administration</p>
         <h3>Music Crossroads Academy &amp; Global Music Campus</h3>
-        <p>Gestion des plateformes Moodle de l'académie et maintenance de leurs serveurs Linux, hébergés chez Hetzner et xCloud.</p>
+        <p data-i18n="ref1.p">Management of the academy's Moodle platforms and maintenance of their Linux servers, hosted on Hetzner and xCloud.</p>
         <ul>
           <li><a href="https://mozambique.music-crossroads-academy.net/" target="_blank" rel="noopener"><span>Music Crossroads Mozambique</span><span class="u">mozambique.music-crossroads-academy.net</span></a></li>
           <li><a href="https://malawi.music-crossroads-academy.net/" target="_blank" rel="noopener"><span>Music Crossroads Malawi</span><span class="u">malawi.music-crossroads-academy.net</span></a></li>
@@ -434,14 +446,14 @@
         <div class="tags"><span>Moodle</span><span>Linux</span><span>Hetzner</span><span>xCloud</span></div>
       </article>
       <article class="ref reveal">
-        <p class="mono">Développement · administration</p>
-        <h3>Infrastructure de l'ENSET</h3>
-        <p>Développement et administration du serveur de l'école, et du Moodle multi-tenant de l'établissement, qui héberge 28 tenants.</p>
+        <p class="mono" data-i18n="ref2.kind">Development · administration</p>
+        <h3 data-i18n="ref2.title">ENSET infrastructure</h3>
+        <p data-i18n="ref2.p">Development and administration of the school's server, and of the institution's multi-tenant Moodle, which hosts 28 tenants.</p>
         <ul>
-          <li><a href="https://serveur.enset.work/" target="_blank" rel="noopener"><span>Serveur de l'école</span><span class="u">serveur.enset.work</span></a></li>
-          <li><a href="https://moodle.enset.work/" target="_blank" rel="noopener"><span>Moodle de l'école (28 tenants)</span><span class="u">moodle.enset.work</span></a></li>
+          <li><a href="https://serveur.enset.work/" target="_blank" rel="noopener"><span data-i18n="ref2.server">School server</span><span class="u">serveur.enset.work</span></a></li>
+          <li><a href="https://moodle.enset.work/" target="_blank" rel="noopener"><span data-i18n="ref2.moodle">School Moodle (28 tenants)</span><span class="u">moodle.enset.work</span></a></li>
         </ul>
-        <div class="tags"><span>Moodle multi-tenant</span><span>Node.js</span><span>Linux</span><span>Cloudflare</span></div>
+        <div class="tags"><span data-i18n="tag.mt">Multi-tenant Moodle</span><span>Node.js</span><span>Linux</span><span>Cloudflare</span></div>
       </article>
     </div>
   </div>
@@ -450,9 +462,9 @@
 <!-- SKILLS -->
 <section id="competences">
   <div class="wrap">
-    <p class="mono label reveal"><span class="num">04 /</span> Compétences</p>
-    <h2 class="sec-title reveal">La boîte à outils.</h2>
-    <p class="about reveal" style="max-width:560px"><span style="color:var(--muted)">Les technologies utilisées dans mes projets et sur les serveurs que j'administre.</span></p>
+    <p class="mono label reveal" data-i18n="skills.label"><span class="num">04 /</span> Skills</p>
+    <h2 class="sec-title reveal" data-i18n="skills.title">The toolbox.</h2>
+    <p class="about reveal" style="max-width:560px"><span style="color:var(--muted)" data-i18n="skills.intro">The technologies used in my projects and on the servers I run.</span></p>
     <div class="skills-grid">
       <div class="skill reveal"><div class="name">TypeScript / JavaScript</div><div class="cat">Web</div></div>
       <div class="skill reveal"><div class="name">React · Next.js · TanStack</div><div class="cat">Front-end</div></div>
@@ -460,20 +472,20 @@
       <div class="skill reveal"><div class="name">Node.js · Express · Fastify</div><div class="cat">Back-end</div></div>
       <div class="skill reveal"><div class="name">Java · Spring Boot</div><div class="cat">Back-end</div></div>
       <div class="skill reveal"><div class="name">JavaFX · Swing</div><div class="cat">Desktop</div></div>
-      <div class="skill reveal"><div class="name">Python · PyTorch</div><div class="cat">IA</div></div>
-      <div class="skill reveal"><div class="name">LLM · Ollama · agents</div><div class="cat">IA</div></div>
-      <div class="skill reveal"><div class="name">PostgreSQL · pgvector</div><div class="cat">Données</div></div>
-      <div class="skill reveal"><div class="name">SQLite · MariaDB · Supabase</div><div class="cat">Données</div></div>
+      <div class="skill reveal"><div class="name">Python · PyTorch</div><div class="cat" data-i18n="cat.ai">AI</div></div>
+      <div class="skill reveal"><div class="name">LLM · Ollama · agents</div><div class="cat" data-i18n="cat.ai">AI</div></div>
+      <div class="skill reveal"><div class="name">PostgreSQL · pgvector</div><div class="cat" data-i18n="cat.data">Data</div></div>
+      <div class="skill reveal"><div class="name">SQLite · MariaDB · Supabase</div><div class="cat" data-i18n="cat.data">Data</div></div>
       <div class="skill reveal"><div class="name">Moodle · multi-tenant</div><div class="cat">LMS</div></div>
       <div class="skill reveal"><div class="name">PHP</div><div class="cat">Web</div></div>
-      <div class="skill reveal"><div class="name">n8n · automatisation</div><div class="cat">IA · Outils</div></div>
-      <div class="skill reveal"><div class="name">Administration Linux</div><div class="cat">Système</div></div>
-      <div class="skill reveal"><div class="name">Hetzner · xCloud · Cloudflare</div><div class="cat">Hébergement</div></div>
-      <div class="skill reveal"><div class="name">Docker · systemd · nginx</div><div class="cat">Déploiement</div></div>
-      <div class="skill reveal"><div class="name">Linux · C (noyau)</div><div class="cat">Système</div></div>
-      <div class="skill reveal"><div class="name">R · statistiques</div><div class="cat">Données</div></div>
-      <div class="skill reveal"><div class="name">Vibecoding · agents de code</div><div class="cat">IA · Outils</div></div>
-      <div class="skill reveal"><div class="name">Git &amp; GitHub</div><div class="cat">Outils</div></div>
+      <div class="skill reveal"><div class="name" data-i18n="sk.n8n">n8n · automation</div><div class="cat" data-i18n="cat.aitools">AI · Tools</div></div>
+      <div class="skill reveal"><div class="name" data-i18n="sk.linux">Linux administration</div><div class="cat" data-i18n="cat.system">Systems</div></div>
+      <div class="skill reveal"><div class="name">Hetzner · xCloud · Cloudflare</div><div class="cat" data-i18n="cat.hosting">Hosting</div></div>
+      <div class="skill reveal"><div class="name">Docker · systemd · nginx</div><div class="cat" data-i18n="cat.deploy">Deployment</div></div>
+      <div class="skill reveal"><div class="name" data-i18n="sk.kernel">Linux · C (kernel)</div><div class="cat" data-i18n="cat.system">Systems</div></div>
+      <div class="skill reveal"><div class="name" data-i18n="sk.r">R · statistics</div><div class="cat" data-i18n="cat.data">Data</div></div>
+      <div class="skill reveal"><div class="name" data-i18n="sk.vibe">Vibecoding · coding agents</div><div class="cat" data-i18n="cat.aitools">AI · Tools</div></div>
+      <div class="skill reveal"><div class="name">Git &amp; GitHub</div><div class="cat" data-i18n="cat.tools">Tools</div></div>
     </div>
   </div>
 </section>
@@ -481,125 +493,125 @@
 <!-- PROJECTS -->
 <section id="projets">
   <div class="wrap">
-    <p class="mono label reveal"><span class="num">05 /</span> Projets</p>
-    <h2 class="sec-title reveal">Quelques réalisations.</h2>
-    <div class="filters reveal" role="group" aria-label="Filtrer les projets">
-      <button class="filter active" data-f="all">Tous</button>
+    <p class="mono label reveal" data-i18n="proj.label"><span class="num">05 /</span> Projects</p>
+    <h2 class="sec-title reveal" data-i18n="proj.title">Selected work.</h2>
+    <div class="filters reveal" role="group" aria-label="Filter projects" data-i18n-attr="aria-label:proj.filter">
+      <button class="filter active" data-f="all" data-i18n="proj.all">All</button>
       <button class="filter" data-f="web">Web</button>
-      <button class="filter" data-f="ia">IA</button>
-      <button class="filter" data-f="logiciel">Logiciel</button>
+      <button class="filter" data-f="ia" data-i18n="cat.ai">AI</button>
+      <button class="filter" data-f="logiciel" data-i18n="cat.software">Software</button>
     </div>
     <div class="projects">
       <article class="card reveal" data-cat="ia">
-        <div class="thumb"><span class="badge">En cours</span><span>IA</span><span class="year">Sept. 2026</span></div>
+        <div class="thumb"><span class="badge" data-i18n="badge.wip">In progress</span><span data-i18n="cat.ai">AI</span><span class="year" data-i18n="m.sep">Sep 2026</span></div>
         <div class="body">
-          <h3>Chronos — mon harnais d'agent IA</h3>
-          <p>Mon propre harnais d'agent IA, en développement : il tourne 24 h/24 avec dashboard et interface vocale : moteur d'objectifs autonome, recherche web approfondie, e-mail, Facebook, Telegram. LLM multi-fournisseurs, secrets chiffrés, validation humaine avant tout envoi.</p>
+          <h3 data-i18n="chronos.h">Chronos — my AI agent harness</h3>
+          <p data-i18n="chronos.p">My own AI agent harness, in development. It runs 24/7 with a dashboard and a voice interface: autonomous goal engine, in-depth web research, email, Facebook, Telegram. Multi-provider LLMs, encrypted secrets, human approval before anything is sent.</p>
           <div class="stack"><span>TypeScript</span><span>Next.js</span><span>PostgreSQL</span><span>LLM</span><span>STT/TTS</span></div>
-          <div class="links"><span class="priv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Code privé (en cours)</span></div>
+          <div class="links"><span class="priv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span data-i18n="chronos.priv">Private code (in progress)</span></span></div>
         </div>
       </article>
       <article class="card reveal" data-cat="web">
-        <div class="thumb"><span>Web</span><span class="year">Avr. 2026</span></div>
+        <div class="thumb"><span>Web</span><span class="year" data-i18n="m.apr">Apr 2026</span></div>
         <div class="body">
-          <h3>KidzPOS — caisse offline-first</h3>
-          <p>Logiciel de caisse multi-magasin (devise Ariary) qui continue de vendre sans réseau : cache local, file d'attente rejouée au retour, synchronisation temps réel et fédération magasin-central.</p>
+          <h3 data-i18n="kidz.h">KidzPOS — offline-first point of sale</h3>
+          <p data-i18n="kidz.p">Multi-store point-of-sale software (Ariary currency) that keeps selling without a network: local cache, a queue replayed on reconnection, real-time sync and store-to-headquarters federation.</p>
           <div class="stack"><span>React</span><span>Spring Boot</span><span>PostgreSQL</span><span>PWA</span></div>
           <div class="links"><a href="https://github.com/Houzefa01/kidzpos-pos-offline" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>Code</a></div>
         </div>
       </article>
       <article class="card reveal" data-cat="ia">
-        <div class="thumb"><span>IA</span><span class="year">Juil. 2026</span></div>
+        <div class="thumb"><span data-i18n="cat.ai">AI</span><span class="year" data-i18n="m.jul">Jul 2026</span></div>
         <div class="body">
-          <h3>myDoc IA — rédaction assistée</h3>
-          <p>Génère rapports, mémoires, présentations, CV et lettres à partir des besoins de l'utilisateur, avec éditeur, historique des versions et export PDF, DOCX, PPTX, LaTeX et Beamer. Système de crédits.</p>
-          <div class="stack"><span>TanStack Start</span><span>React 19</span><span>Supabase</span><span>IA</span></div>
+          <h3 data-i18n="mydoc.h">myDoc AI — assisted writing</h3>
+          <p data-i18n="mydoc.p">Generates reports, theses, presentations, CVs and letters from the user's needs, with an editor, version history and PDF, DOCX, PPTX, LaTeX and Beamer export. Credit system.</p>
+          <div class="stack"><span>TanStack Start</span><span>React 19</span><span>Supabase</span><span data-i18n="cat.ai">AI</span></div>
           <div class="links"><a href="https://github.com/Houzefa01/mydoc-ai-enhancements" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>Code</a></div>
         </div>
       </article>
       <article class="card reveal" data-cat="logiciel">
-        <div class="thumb"><span class="badge">Mémoire</span><span>Logiciel</span><span class="year">Fév. 2026</span></div>
+        <div class="thumb"><span class="badge" data-i18n="badge.thesis">Thesis</span><span data-i18n="cat.software">Software</span><span class="year" data-i18n="m.feb">Feb 2026</span></div>
         <div class="body">
           <h3>Distributed IDE</h3>
-          <p>IDE collaboratif de bureau : plusieurs personnes éditent le même code en temps réel grâce à des CRDT, avec terminal dans Docker, LSP, Git intégré et plugins. 8 modules Maven.</p>
+          <p data-i18n="ide.p">Collaborative desktop IDE: several people edit the same code in real time thanks to CRDTs, with a terminal in Docker, LSP, built-in Git and plugins. 8 Maven modules.</p>
           <div class="stack"><span>Java 21</span><span>JavaFX</span><span>CRDT</span><span>WebSocket</span><span>Docker</span></div>
           <div class="links"><a href="https://github.com/Houzefa01/distributed-ide" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>Code</a></div>
         </div>
       </article>
       <article class="card reveal" data-cat="ia">
-        <div class="thumb"><span class="badge">Recherche</span><span>IA</span><span class="year">Juil. 2026</span></div>
+        <div class="thumb"><span class="badge" data-i18n="badge.research">Research</span><span data-i18n="cat.ai">AI</span><span class="year" data-i18n="m.jul">Jul 2026</span></div>
         <div class="body">
-          <h3>Lab IA — battre le Transformer sur CPU</h3>
-          <p>14 architectures testées selon un protocole strict. Résultat : une attention locale par blocs, à précision égale, 10,85× plus rapide que le Transformer à 2048 tokens, et la seule à tenir à 4096.</p>
+          <h3 data-i18n="lab.h">AI Lab — beating the Transformer on CPU</h3>
+          <p data-i18n="lab.p">14 architectures tested under a strict protocol. Result: a block-local attention that, at equal accuracy, is 10.85× faster than the Transformer at 2048 tokens, and the only one to hold up at 4096.</p>
           <div class="stack"><span>PyTorch</span><span>Python</span><span>Benchmarks</span></div>
           <div class="links"><a href="https://github.com/Houzefa01/lab-ia-architectures-cpu" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>Code</a></div>
         </div>
       </article>
       <article class="card reveal" data-cat="web">
-        <div class="thumb"><span>Web</span><span class="year">Oct. 2026</span></div>
+        <div class="thumb"><span>Web</span><span class="year" data-i18n="m.oct">Oct 2026</span></div>
         <div class="body">
-          <h3>Duelo — quiz en duel</h3>
-          <p>Jeu de culture générale en duel 1 contre 1, en moins de 3 minutes, dans le navigateur : temps réel, tournois, lots chiffrés, espace admin. Assez léger pour tourner sur un vieux PC.</p>
+          <h3 data-i18n="duelo.h">Duelo — head-to-head quiz</h3>
+          <p data-i18n="duelo.p">A one-on-one general knowledge duel in under 3 minutes, in the browser: real-time play, tournaments, encrypted rewards, admin area. Light enough to run on an old PC.</p>
           <div class="stack"><span>Node 22</span><span>Fastify</span><span>SQLite</span><span>WebSocket</span></div>
           <div class="links"><a href="https://github.com/Houzefa01/duelo-quiz-duel" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>Code</a></div>
         </div>
       </article>
       <article class="card reveal" data-cat="web">
-        <div class="thumb"><span class="badge">Équipe</span><span>Web</span><span class="year">Mai 2026</span></div>
+        <div class="thumb"><span class="badge" data-i18n="badge.team">Team</span><span>Web</span><span class="year" data-i18n="m.may">May 2026</span></div>
         <div class="body">
-          <h3>ItadyTrano — logements étudiants</h3>
-          <p>Plateforme de location pour les étudiants : annonces avec carte, visites, réservations, contrats, paiement des loyers, messagerie, modération.</p>
+          <h3 data-i18n="itady.h">ItadyTrano — student housing</h3>
+          <p data-i18n="itady.p">Rental platform for students: listings with a map, viewings, bookings, contracts, rent payments, messaging, moderation.</p>
           <div class="stack"><span>Angular</span><span>Spring Boot</span><span>PostgreSQL</span><span>JWT</span></div>
           <div class="links"><a href="https://github.com/Houzefa01/itadytrano-locamaison" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>Code</a></div>
         </div>
       </article>
       <article class="card reveal" data-cat="web">
-        <div class="thumb"><span>Web</span><span class="year">Mai 2026</span></div>
+        <div class="thumb"><span>Web</span><span class="year" data-i18n="m.may">May 2026</span></div>
         <div class="body">
-          <h3>Lumen — école en ligne</h3>
-          <p>Espace d'apprentissage : tableau de bord de progression, cours, exercices, examens, notes, emploi du temps et espace enseignant.</p>
+          <h3 data-i18n="lumen.h">Lumen — online school</h3>
+          <p data-i18n="lumen.p">Learning space: progress dashboard, courses, exercises, exams, grades, timetable and a teacher area.</p>
           <div class="stack"><span>React 19</span><span>Supabase</span><span>Cloudflare</span></div>
           <div class="links"><a href="https://github.com/Houzefa01/edu-zenith-scape" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>Code</a></div>
         </div>
       </article>
       <article class="card reveal" data-cat="web">
-        <div class="thumb"><span>Web</span><span class="year">Fév. 2026</span></div>
+        <div class="thumb"><span>Web</span><span class="year" data-i18n="m.feb">Feb 2026</span></div>
         <div class="body">
-          <h3>LireMalin — apprendre à lire</h3>
-          <p>Application éducative (PWA) pour les 4-8 ans : alphabet, syllabes, lecture, écriture, avec suivi de la progression pour les parents.</p>
+          <h3 data-i18n="lire.h">LireMalin — learning to read</h3>
+          <p data-i18n="lire.p">Educational app (PWA) that teaches 4 to 8-year-olds to read and write in French: alphabet, syllables, reading, writing, with progress tracking for parents.</p>
           <div class="stack"><span>React</span><span>PWA</span><span>Vite</span></div>
           <div class="links"><a href="https://github.com/Houzefa01/mon-premier-livre-fran-ais" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>Code</a></div>
         </div>
       </article>
       <article class="card reveal" data-cat="logiciel">
-        <div class="thumb"><span class="badge">En ligne</span><span>Logiciel</span><span class="year">Juin 2026</span></div>
+        <div class="thumb"><span class="badge" data-i18n="badge.live">Live</span><span data-i18n="cat.software">Software</span><span class="year" data-i18n="m.jun">Jun 2026</span></div>
         <div class="body">
-          <h3>Panneau d'administration serveur</h3>
-          <p>Administration web d'un serveur Debian : état du système, terminal intégré, fichiers, services systemd, plusieurs utilisateurs avec rôles. HTTPS obligatoire.</p>
+          <h3 data-i18n="panel.h">Server admin panel</h3>
+          <p data-i18n="panel.p">Web administration for a Debian server: system status, built-in terminal, files, systemd services, multiple users with roles. HTTPS required.</p>
           <div class="stack"><span>Node.js</span><span>Express</span><span>xterm.js</span><span>Linux</span></div>
-          <div class="links"><a href="https://github.com/Houzefa01/panneau-admin-serveur" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>Code</a><a href="https://serveur.enset.work" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>Voir le site</a></div>
+          <div class="links"><a href="https://github.com/Houzefa01/panneau-admin-serveur" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>Code</a><a href="https://serveur.enset.work" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg><span data-i18n="panel.site">Visit site</span></a></div>
         </div>
       </article>
       <article class="card reveal" data-cat="ia">
-        <div class="thumb"><span>IA</span><span class="year">Sept. 2026</span></div>
+        <div class="thumb"><span data-i18n="cat.ai">AI</span><span class="year" data-i18n="m.sep">Sep 2026</span></div>
         <div class="body">
-          <h3>Prospection automatisée n8n</h3>
-          <p>Prospection freelance : sourcing de contacts, e-mails personnalisés par un LLM, relances et détection des réponses, avec validation humaine obligatoire.</p>
+          <h3 data-i18n="n8n.h">Automated prospecting with n8n</h3>
+          <p data-i18n="n8n.p">Freelance prospecting: contact sourcing, LLM-personalised emails, follow-ups and reply detection, with mandatory human approval.</p>
           <div class="stack"><span>n8n</span><span>Python</span><span>SQLite</span><span>LLM</span></div>
           <div class="links"><a href="https://github.com/Houzefa01/prospection-n8n-moodle-ia" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>Code</a></div>
         </div>
       </article>
       <article class="card reveal" data-cat="logiciel">
-        <div class="thumb"><span>Logiciel</span><span class="year">Juin 2026</span></div>
+        <div class="thumb"><span data-i18n="cat.software">Software</span><span class="year" data-i18n="m.jun">Jun 2026</span></div>
         <div class="body">
           <h3>Markov Studio</h3>
-          <p>Application de bureau d'analyse de chaînes de Markov : classes, période, loi stationnaire, absorption, prévision et graphes. Moteur creux pour des milliers d'états.</p>
-          <div class="stack"><span>R</span><span>Tcl/Tk</span><span>Mathématiques</span></div>
+          <p data-i18n="markov.p">Desktop app for Markov chain analysis: classes, period, stationary distribution, absorption, forecasting and graphs. Sparse engine for thousands of states.</p>
+          <div class="stack"><span>R</span><span>Tcl/Tk</span><span data-i18n="tag.math">Mathematics</span></div>
           <div class="links"><a href="https://github.com/Houzefa01/markov-studio" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>Code</a></div>
         </div>
       </article>
     </div>
-    <p class="note">Et aussi : un pilote Wi-Fi Linux pour capter le CSI, un bot statistique de trading, une gestion d'élèves en Java/JDBC… Tout le code est sur <a href="https://github.com/Houzefa01" target="_blank" rel="noopener">github.com/Houzefa01</a>.</p>
+    <p class="note" data-i18n="proj.note">Also: a Linux Wi-Fi driver that captures CSI, a statistical trading bot, a student management app in Java/JDBC… All public code is on <a href="https://github.com/Houzefa01" target="_blank" rel="noopener">github.com/Houzefa01</a>.</p>
   </div>
 </section>
 
@@ -608,16 +620,16 @@
   <div class="wrap">
     <div class="contact-wrap reveal">
       <p class="mono label" style="justify-content:center"><span class="num">06 /</span> Contact</p>
-      <h2>Un projet en tête ?<br><em>Parlons-en.</em></h2>
-      <p>Que ce soit pour un site, une fonctionnalité IA ou un logiciel sur mesure, je serais ravi d'en discuter. Le plus simple est de m'écrire.</p>
+      <h2 data-i18n="contact.h">Have a project in mind?<br><em>Let's talk.</em></h2>
+      <p data-i18n="contact.p">Whether it's a website, an AI feature or custom software, I'd be glad to talk it through. The easiest way is to send me an email.</p>
       <div class="contact-actions">
         <a href="mailto:houzefasavatra@gmail.com" class="btn btn-primary">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-          Envoyer un email
+          <span data-i18n="contact.mail">Send an email</span>
         </a>
         <a href="tel:+261322547526" class="btn btn-ghost">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
-          M'appeler
+          <span data-i18n="contact.call">Call me</span>
         </a>
       </div>
       <div class="chips">
@@ -631,13 +643,167 @@
 
 <footer>
   <div class="wrap foot">
-    <p>© <span id="year"></span> Houzefa Savatra — Tous droits réservés.</p>
-    <p class="visits" id="visits" title="Nombre total de visites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><b id="visits-n">0</b> visites</p>
-    <p class="mono">Full-stack · IA · Vibecoding · Admin système · Moodle</p>
+    <p>© <span id="year"></span> Houzefa Savatra — <span data-i18n="foot.rights">All rights reserved.</span></p>
+    <p class="visits" id="visits" title="Total visits" data-i18n-attr="title:foot.visits"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><b id="visits-n">0</b> <span id="visits-w">visits</span></p>
+    <p class="mono" data-i18n="foot.tagline">Full-stack · AI · Vibecoding · SysAdmin · Moodle</p>
   </div>
 </footer>
 
 <script>
+  // langue : anglais par défaut (dans le HTML), français au choix, mémorisé dans le navigateur
+  const FR = {
+      "meta.title": "Houzefa Savatra — Développeur full-stack · IA · Admin système · Expert Moodle",
+      "meta.desc": "Portfolio de Houzefa Savatra, Madagascar : développeur full-stack, expert Moodle, administrateur système Linux et vibecoding. Créateur de Chronos, son propre harnais d'agent IA.",
+      "nav.about": "À propos",
+      "nav.refs": "Références",
+      "nav.skills": "Compétences",
+      "nav.projects": "Projets",
+      "nav.contact": "Me contacter",
+      "menu.open": "Ouvrir le menu",
+      "hero.eyebrow": "Full-stack · IA · Admin système · Moodle · Madagascar",
+      "hero.lead": "Je conçois et construis des produits numériques de bout en bout — du <strong>web</strong> aux solutions d'<strong>intelligence artificielle</strong>, jusqu'aux <strong>logiciels</strong> sur mesure — et j'administre les <strong>serveurs Linux</strong> et les <strong>plateformes Moodle</strong> qui les font tourner en production.",
+      "hero.cta": "Travaillons ensemble",
+      "hero.projects": "Voir mes projets",
+      "hero.alt": "Portrait de Houzefa Savatra",
+      "hero.tag": "<span class=\"dot\"></span>Ouvert aux projets",
+      "about.label": "<span class=\"num\">01 /</span> À propos",
+      "about.title": "Construire des choses utiles, proprement.",
+      "about.p1": "Je suis développeur, passionné par la création de produits qui marchent et qui durent. J'aime autant l'architecture d'une application que les détails d'une interface : les deux décident de l'expérience finale.",
+      "about.p2": "Mon terrain de jeu couvre <strong>le web</strong>, <strong>l'intelligence artificielle</strong> et <strong>le logiciel</strong>, jusqu'à l'infrastructure qui les héberge. Je peux ainsi accompagner un projet de l'idée jusqu'à la mise en production, puis le maintenir, sans dépendre d'une seule brique.",
+      "about.p3": "Je suis aussi <strong>administrateur système Linux</strong> et <strong>expert Moodle</strong> : je gère les plateformes d'apprentissage de la Music Crossroads Academy (Mozambique, Malawi, Zimbabwe) et du Global Music Campus, ainsi que la maintenance de leurs serveurs chez Hetzner et xCloud. Pour mon école, j'ai développé et j'administre le serveur <strong>serveur.enset.work</strong> et le Moodle <strong>moodle.enset.work</strong>, qui héberge 28 tenants.",
+      "about.p4": "En ce moment, je développe <strong>Chronos</strong>, mon propre harnais d'agent IA. Je pratique le <strong>vibecoding</strong> au quotidien : je conçois et livre des logiciels en pilotant des agents de code IA.",
+      "about.p5": "Curieux et rigoureux, j'apprends en continu et je m'attache à livrer un travail soigné, documenté et maintenable.",
+      "facts.aria": "Coordonnées",
+      "fact.name": "Nom",
+      "fact.role": "Rôle",
+      "fact.loc": "Localisation",
+      "fact.phone": "Téléphone",
+      "fact.status": "Statut",
+      "fact.rolev": "Développeur full-stack · Expert IA &amp; vibecoding · Administrateur système Linux · Expert Moodle",
+      "fact.statusv": "Ouvert aux projets",
+      "exp.title": "Six domaines, une seule démarche.",
+      "exp.web": "Développement web",
+      "exp.web.p": "Applications web complètes, du front au back-end : caisse offline-first multi-magasin, quiz en temps réel, plateforme de location, école en ligne, applications éducatives en PWA.",
+      "tag.realtime": "Temps réel",
+      "exp.ai": "Intelligence artificielle",
+      "exp.ai.p": "Agents IA autonomes (Chronos, mon propre harnais), génération de documents par IA, automatisation avec n8n, et recherche sur des architectures de réseaux de neurones plus rapides que le Transformer sur CPU.",
+      "tag.aiagents": "Agents IA",
+      "cat.software": "Logiciel",
+      "exp.sw.p": "Applications de bureau et outils métier : IDE collaboratif temps réel, analyse de chaînes de Markov, gestion d'élèves, jusqu'au pilote Wi-Fi du noyau Linux.",
+      "tag.kernel": "C · noyau Linux",
+      "exp.vibe.p": "Concevoir et livrer des logiciels complets en pilotant des agents de code IA, avec des tests, des audits et une revue humaine pour garder le code fiable et maintenable.",
+      "tag.codeagents": "Agents de code",
+      "tag.review": "Revue",
+      "exp.sys": "Administration système",
+      "exp.sys.p": "Serveurs Linux en production : installation, sécurisation, sauvegardes, supervision, mises à jour et dépannage, chez Hetzner, xCloud ou sur du matériel sur site.",
+      "exp.moodle": "Expert Moodle",
+      "exp.moodle.p": "Déploiement, configuration, multi-tenant, thèmes, plugins, mises à jour et maintenance de plateformes Moodle utilisées par des écoles et des académies.",
+      "refs.label": "<span class=\"num\">03 /</span> Références",
+      "refs.title": "Des plateformes en production.",
+      "ref1.kind": "Moodle · administration serveur",
+      "ref1.p": "Gestion des plateformes Moodle de l'académie et maintenance de leurs serveurs Linux, hébergés chez Hetzner et xCloud.",
+      "ref2.kind": "Développement · administration",
+      "ref2.title": "Infrastructure de l'ENSET",
+      "ref2.p": "Développement et administration du serveur de l'école, et du Moodle multi-tenant de l'établissement, qui héberge 28 tenants.",
+      "ref2.server": "Serveur de l'école",
+      "ref2.moodle": "Moodle de l'école (28 tenants)",
+      "tag.mt": "Moodle multi-tenant",
+      "skills.label": "<span class=\"num\">04 /</span> Compétences",
+      "skills.title": "La boîte à outils.",
+      "skills.intro": "Les technologies utilisées dans mes projets et sur les serveurs que j'administre.",
+      "cat.ai": "IA",
+      "cat.data": "Données",
+      "cat.aitools": "IA · Outils",
+      "cat.system": "Système",
+      "cat.hosting": "Hébergement",
+      "cat.deploy": "Déploiement",
+      "cat.tools": "Outils",
+      "sk.n8n": "n8n · automatisation",
+      "sk.linux": "Administration Linux",
+      "sk.kernel": "Linux · C (noyau)",
+      "sk.r": "R · statistiques",
+      "sk.vibe": "Vibecoding · agents de code",
+      "proj.label": "<span class=\"num\">05 /</span> Projets",
+      "proj.title": "Quelques réalisations.",
+      "proj.filter": "Filtrer les projets",
+      "proj.all": "Tous",
+      "badge.wip": "En cours",
+      "badge.thesis": "Mémoire",
+      "badge.research": "Recherche",
+      "badge.team": "Équipe",
+      "badge.live": "En ligne",
+      "m.sep": "Sept. 2026",
+      "m.apr": "Avr. 2026",
+      "m.jul": "Juil. 2026",
+      "m.feb": "Fév. 2026",
+      "m.oct": "Oct. 2026",
+      "m.may": "Mai 2026",
+      "m.jun": "Juin 2026",
+      "chronos.h": "Chronos — mon harnais d'agent IA",
+      "chronos.p": "Mon propre harnais d'agent IA, en développement : il tourne 24 h/24 avec dashboard et interface vocale : moteur d'objectifs autonome, recherche web approfondie, e-mail, Facebook, Telegram. LLM multi-fournisseurs, secrets chiffrés, validation humaine avant tout envoi.",
+      "chronos.priv": "Code privé (en cours)",
+      "kidz.h": "KidzPOS — caisse offline-first",
+      "kidz.p": "Logiciel de caisse multi-magasin (devise Ariary) qui continue de vendre sans réseau : cache local, file d'attente rejouée au retour, synchronisation temps réel et fédération magasin-central.",
+      "mydoc.h": "myDoc IA — rédaction assistée",
+      "mydoc.p": "Génère rapports, mémoires, présentations, CV et lettres à partir des besoins de l'utilisateur, avec éditeur, historique des versions et export PDF, DOCX, PPTX, LaTeX et Beamer. Système de crédits.",
+      "ide.p": "IDE collaboratif de bureau : plusieurs personnes éditent le même code en temps réel grâce à des CRDT, avec terminal dans Docker, LSP, Git intégré et plugins. 8 modules Maven.",
+      "lab.h": "Lab IA — battre le Transformer sur CPU",
+      "lab.p": "14 architectures testées selon un protocole strict. Résultat : une attention locale par blocs, à précision égale, 10,85× plus rapide que le Transformer à 2048 tokens, et la seule à tenir à 4096.",
+      "duelo.h": "Duelo — quiz en duel",
+      "duelo.p": "Jeu de culture générale en duel 1 contre 1, en moins de 3 minutes, dans le navigateur : temps réel, tournois, lots chiffrés, espace admin. Assez léger pour tourner sur un vieux PC.",
+      "itady.h": "ItadyTrano — logements étudiants",
+      "itady.p": "Plateforme de location pour les étudiants : annonces avec carte, visites, réservations, contrats, paiement des loyers, messagerie, modération.",
+      "lumen.h": "Lumen — école en ligne",
+      "lumen.p": "Espace d'apprentissage : tableau de bord de progression, cours, exercices, examens, notes, emploi du temps et espace enseignant.",
+      "lire.h": "LireMalin — apprendre à lire",
+      "lire.p": "Application éducative (PWA) pour les 4-8 ans : alphabet, syllabes, lecture, écriture, avec suivi de la progression pour les parents.",
+      "panel.h": "Panneau d'administration serveur",
+      "panel.p": "Administration web d'un serveur Debian : état du système, terminal intégré, fichiers, services systemd, plusieurs utilisateurs avec rôles. HTTPS obligatoire.",
+      "panel.site": "Voir le site",
+      "n8n.h": "Prospection automatisée n8n",
+      "n8n.p": "Prospection freelance : sourcing de contacts, e-mails personnalisés par un LLM, relances et détection des réponses, avec validation humaine obligatoire.",
+      "markov.p": "Application de bureau d'analyse de chaînes de Markov : classes, période, loi stationnaire, absorption, prévision et graphes. Moteur creux pour des milliers d'états.",
+      "tag.math": "Mathématiques",
+      "proj.note": "Et aussi : un pilote Wi-Fi Linux pour capter le CSI, un bot statistique de trading, une gestion d'élèves en Java/JDBC… Tout le code public est sur <a href=\"https://github.com/Houzefa01\" target=\"_blank\" rel=\"noopener\">github.com/Houzefa01</a>.",
+      "contact.h": "Un projet en tête ?<br><em>Parlons-en.</em>",
+      "contact.p": "Que ce soit pour un site, une fonctionnalité IA ou un logiciel sur mesure, je serais ravi d'en discuter. Le plus simple est de m'écrire.",
+      "contact.mail": "Envoyer un email",
+      "contact.call": "M'appeler",
+      "foot.rights": "Tous droits réservés.",
+      "foot.visits": "Nombre total de visites",
+      "visit.one": "visite",
+      "visit.many": "visites",
+      "foot.tagline": "Full-stack · IA · Vibecoding · Admin système · Moodle"
+  };
+  const EN = {'visit.one': 'visit', 'visit.many': 'visits'};
+  const i18nEls = document.querySelectorAll('[data-i18n]');
+  const attrEls = document.querySelectorAll('[data-i18n-attr]');
+  const metaDesc = document.querySelector('meta[name="description"]');
+  i18nEls.forEach(el => { if (!(el.dataset.i18n in EN)) EN[el.dataset.i18n] = el.innerHTML; });
+  attrEls.forEach(el => { const [a, k] = el.dataset.i18nAttr.split(':'); EN[k] = el.getAttribute(a); });
+  EN['meta.title'] = document.title;
+  EN['meta.desc'] = metaDesc.content;
+  let lang = 'en', visits = null;
+  const t = k => (lang === 'fr' && k in FR) ? FR[k] : EN[k];
+  function visitsWord(){
+    if (visits !== null) document.getElementById('visits-w').textContent = t(visits === 1 ? 'visit.one' : 'visit.many');
+  }
+  function setLang(l, save){
+    lang = l === 'fr' ? 'fr' : 'en';
+    document.documentElement.lang = lang;
+    i18nEls.forEach(el => { el.innerHTML = t(el.dataset.i18n); });
+    attrEls.forEach(el => { const [a, k] = el.dataset.i18nAttr.split(':'); el.setAttribute(a, t(k)); });
+    document.title = t('meta.title');
+    metaDesc.content = t('meta.desc');
+    document.querySelectorAll('.lang button').forEach(b => b.setAttribute('aria-pressed', b.dataset.lang === lang));
+    visitsWord();
+    if (save) { try { localStorage.setItem('lang', lang); } catch (e) {} }
+  }
+  document.querySelectorAll('.lang button').forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang, true)));
+  let saved = null;
+  try { saved = localStorage.getItem('lang'); } catch (e) {}
+  setLang(new URLSearchParams(location.search).get('lang') || saved || 'en');
+
   // statistiques de visites (GoatCounter : sans cookie)
   const GC = 'savatra';
   (function(){
@@ -651,6 +817,8 @@
     .then(r => r.ok ? r.json() : Promise.reject())
     .then(d => {
       document.getElementById('visits-n').textContent = String(d.count).replace(/,/g, '\u202f');
+      visits = Number(String(d.count).replace(/\D/g, ''));
+      visitsWord();
       document.getElementById('visits').classList.add('on');
     })
     .catch(() => {});
